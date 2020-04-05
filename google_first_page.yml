@@ -1,0 +1,12 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://127.0.0.1:8080
+functions:
+  google_first_page:
+    lang: python3-debian
+    handler: ./google_first_page
+    image: wisehackermonkey/google_first_page:latest
+    environment:
+      read_timeout: 20s
+      write_timeout: 20s
